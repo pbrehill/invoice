@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+  <div class="media">
+      <div class="media-body">
+      <h2 class="account-heading">{{ current_user.email }}</h2>
+      <p class="text-secondary">username@email.com</p>
+    </div>
+  </div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="mb-4">Edit account information</legend>
+                <div class="form-group">
+                    {{form.email.label(class="form-control-label") }}
+
+                    {% if form.email.errors %}
+                        {{form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{form.first_name.label(class="form-control-label") }}
+                    {% if form.first_name.errors %}
+                        {{form.first_name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.first_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.first_name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                                <div class="form-group">
+                    {{form.last_name.label(class="form-control-label") }}
+                    {% if form.last_name.errors %}
+                        {{form.last_name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.last_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.last_name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{form.abn.label(class="form-control-label") }}
+                    {% if form.abn.errors %}
+                        {{form.abn(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.abn.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.abn(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{form.bank_name.label(class="form-control-label") }}
+                    {% if form.bank_name.errors %}
+                        {{form.bank_name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bank_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.bank_name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{form.bank_num.label(class="form-control-label") }}
+                    {% if form.bank_num.errors %}
+                        {{form.bank_num(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bank_num.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.bank_num(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{form.bank_bsb.label(class="form-control-label") }}
+                    {% if form.bank_bsb.errors %}
+                        {{form.bank_bsb(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bank_bsb.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.bank_bsb(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+</div>
+{% endblock content %}
